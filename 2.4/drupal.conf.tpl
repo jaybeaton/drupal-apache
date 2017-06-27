@@ -1,9 +1,9 @@
 <VirtualHost *:80>
-    DocumentRoot "/var/www/html"
+    DocumentRoot {{ getenv "APACHE_SERVER_ROOT" "/var/www/html" }}
     ServerName {{ getenv "APACHE_SERVER_NAME" "drupal" }}
     DirectoryIndex /index.php index.php
 
-    <Directory "/var/www/html">
+    <Directory {{ getenv "APACHE_SERVER_ROOT" "/var/www/html" }}>
       Options Indexes FollowSymLinks
       AllowOverride All
       Require all granted

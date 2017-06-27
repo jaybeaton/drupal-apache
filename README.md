@@ -23,11 +23,12 @@ See at [wodby/apache](https://github.com/wodby/apache)
 
 | Variable | Default Value | Description |
 | -------- | ------------- | ----------- |
-| APACHE_SERVER_NAME             | drupal | |
-| APACHE_BACKEND_HOST            |        | |
-| APACHE_BACKEND_PORT            | 9000   | |
-| APACHE_FCGI_PROXY_CONN_TIMEOUT | 5      | |
-| APACHE_FCGI_PROXY_TIMEOUT      | 60     | |
+| APACHE_BACKEND_HOST            |               |  |
+| APACHE_BACKEND_PORT            | 9000          |  |
+| APACHE_FCGI_PROXY_CONN_TIMEOUT | 5             |  |
+| APACHE_FCGI_PROXY_TIMEOUT      | 60            |  |
+| APACHE_SERVER_NAME             | drupal        |  |
+| APACHE_SERVER_ROOT             | /var/www/html |  |
 
 ## Complete Drupal stack
 
