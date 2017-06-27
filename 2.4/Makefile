@@ -20,7 +20,7 @@ shell:
 	docker run --rm --name $(NAME) -i -t $(PORTS) $(VOLUMES) $(ENV) $(REPO):$(VERSION) /bin/bash
 
 run:
-	docker run --rm --name $(NAME) -e APACHE_LOG_LEVEL=debug $(PORTS) $(VOLUMES) $(ENV) $(REPO):$(VERSION)
+	docker run --rm --name $(NAME) $(PORTS) $(VOLUMES) $(ENV) $(REPO):$(VERSION)
 
 start:
 	docker run -d --name $(NAME) $(PORTS) $(VOLUMES) $(ENV) $(REPO):$(VERSION)
