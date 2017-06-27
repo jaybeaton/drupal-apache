@@ -1,9 +1,9 @@
 -include env_make
 
-VERSION ?= 8-2.4
+VERSION ?= 2.4
 
 REPO = wodby/drupal-apache
-NAME = drupal-8-apache-2.4
+NAME = drupal-apache-2.4
 
 .PHONY: build test push shell run start stop logs clean release
 
