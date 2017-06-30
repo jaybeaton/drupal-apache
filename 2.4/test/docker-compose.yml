@@ -10,7 +10,7 @@ services:
     volumes:
       - codebase:/var/www/html
   drupal:
-    image: wodby/drupal:8-7.1
+    image: drupal:8-fpm
     volumes:
       - codebase:/var/www/html
 
