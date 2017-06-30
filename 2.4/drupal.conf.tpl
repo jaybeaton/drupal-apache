@@ -17,4 +17,9 @@
             SetHandler "proxy:fcgi://{{ getenv "APACHE_BACKEND_HOST" }}:{{ getenv "APACHE_BACKEND_PORT" "9000" }}"
         </If>
     </FilesMatch>
+{{ if getenv "APACHE_DRUPAL_HIDE_HEADERS" }}
+    Header always unset X-Drupal-Dynamic-Cache
+    Header always unset X-Drupal-Cache
+    Header always unset X-Generator
+{{ end }}
 </VirtualHost>

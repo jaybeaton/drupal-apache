@@ -25,6 +25,7 @@ See at [wodby/apache](https://github.com/wodby/apache)
 | -------- | ------------- | ----------- |
 | APACHE_BACKEND_HOST            |               |  |
 | APACHE_BACKEND_PORT            | 9000          |  |
+| APACHE_DRUPAL_HIDE_HEADERS     |               |  |
 | APACHE_FCGI_PROXY_CONN_TIMEOUT | 5             |  |
 | APACHE_FCGI_PROXY_TIMEOUT      | 60            |  |
 | APACHE_SERVER_NAME             | drupal        |  |
