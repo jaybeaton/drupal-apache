@@ -1,4 +1,4 @@
-FROM wodby/apache:2.4-1.0.0
+FROM wodby/apache:2.4-1.0.1
 
 ENV WODBY_DIR_FILES /mnt/files
 
