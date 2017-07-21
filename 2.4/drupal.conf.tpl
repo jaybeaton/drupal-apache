@@ -22,4 +22,6 @@
     Header always unset X-Drupal-Cache
     Header always unset X-Generator
 {{ end }}
+
+    Include conf/healthz.conf
 </VirtualHost>
