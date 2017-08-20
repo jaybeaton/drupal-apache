@@ -28,6 +28,7 @@ See at [wodby/apache](https://github.com/wodby/apache)
 | APACHE_FCGI_PROXY_TIMEOUT      | 60            |  |
 | APACHE_SERVER_NAME             | drupal        |  |
 | APACHE_SERVER_ROOT             | /var/www/html |  |
+| APACHE_PRODUCTION_URL          |               | For image redirects to production |
 
 ## Complete Drupal stack
 

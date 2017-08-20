@@ -23,5 +23,23 @@
     Header always unset X-Generator
 {{ end }}
 
+{{ if getenv "APACHE_PRODUCTION_URL" }}
+    RewriteEngine on
+    # Force image styles that have local files that exist to be generated.
+    RewriteCond %{REQUEST_URI} ^/sites/([^\/]*)/files/styles/[^\/]*/public/((.*))$
+    RewriteCond %{DOCUMENT_ROOT}/sites/%1/files/%2 -f
+    RewriteRule ^(.*)$ $1 [QSA,L]
+    # Otherwise, send anything else that's in the files directory to the
+    # production server.
+    RewriteCond %{REQUEST_URI} ^(/sites/)[^\/]*(/files/.*)$
+    RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/css/.*$
+    RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/js/.*$
+    RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/advagg_css/.*$
+    RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/advagg_js/.*$
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ {{ getenv "APACHE_PRODUCTION_URL" }}%1default%2 [QSA,L]
+{{ end }}
+
     Include conf/healthz.conf
 </VirtualHost>
