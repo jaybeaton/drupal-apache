@@ -38,7 +38,7 @@
     RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/advagg_js/.*$
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ {{ getenv "APACHE_PRODUCTION_IMAGE_REWRITE" }}%1default%2 [QSA,L]
+    RewriteRule ^(.*)$ {{ getenv "APACHE_PRODUCTION_IMAGE_REWRITE" }} [QSA,L]
 {{ end }}
 
     Include conf/healthz.conf
