@@ -23,7 +23,7 @@
     Header always unset X-Generator
 {{ end }}
 
-{{ if getenv "APACHE_PRODUCTION_URL" }}
+{{ if getenv "APACHE_PRODUCTION_IMAGE_REWRITE" }}
     RewriteEngine on
     # Force image styles that have local files that exist to be generated.
     RewriteCond %{REQUEST_URI} ^/sites/([^\/]*)/files/styles/[^\/]*/public/((.*))$
@@ -38,7 +38,7 @@
     RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/advagg_js/.*$
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ {{ getenv "APACHE_PRODUCTION_URL" }}%1default%2 [QSA,L]
+    RewriteRule ^(.*)$ {{ getenv "APACHE_PRODUCTION_IMAGE_REWRITE" }}%1default%2 [QSA,L]
 {{ end }}
 
     Include conf/healthz.conf
