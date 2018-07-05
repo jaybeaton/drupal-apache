@@ -31,7 +31,7 @@
     RewriteRule ^(.*)$ $1 [QSA,L]
     # Otherwise, send anything else that's in the files directory to the
     # production server.
-    RewriteCond %{REQUEST_URI} ^(/sites/)[^\/]*(/files/.*)$
+    RewriteCond %{REQUEST_URI} ^(/sites/)([^\/]*)(/files/.*)$
     RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/css/.*$
     RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/js/.*$
     RewriteCond %{REQUEST_URI} !^/sites/[^\/]*/files/advagg_css/.*$
